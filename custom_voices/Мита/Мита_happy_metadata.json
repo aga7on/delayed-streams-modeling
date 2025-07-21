@@ -1,0 +1,19 @@
+{
+  "name": "\u041c\u0438\u0442\u0430",
+  "speaker": "Mita Kepochka",
+  "emotion": "happy",
+  "quality": "high",
+  "num_files": 1,
+  "created": "2025-07-21T20:55:41.981716",
+  "embedding_shape": [
+    1,
+    512,
+    125
+  ],
+  "sample_rate": 24000,
+  "tensor_info": {
+    "dtype": "torch.float32",
+    "numel": 64000,
+    "is_contiguous": true
+  }
+}

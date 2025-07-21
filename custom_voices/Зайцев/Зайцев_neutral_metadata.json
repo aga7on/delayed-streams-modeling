@@ -1,0 +1,13 @@
+{
+  "name": "\u0417\u0430\u0439\u0446\u0435\u0432",
+  "speaker": "zajcev",
+  "emotion": "neutral",
+  "quality": "high",
+  "num_files": 1,
+  "created": "2025-07-21T20:08:52.309347",
+  "embedding_shape": [
+    1,
+    32
+  ],
+  "sample_rate": 24000
+}
