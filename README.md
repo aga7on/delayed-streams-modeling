@@ -1,3 +1,7 @@
+# So I added a web ui based on gradio.
+ Im not a coder, and managed an ai to make a working web ui for TTS
+
+
 # Delayed Streams Modeling: Kyutai STT & TTS
 
 This repo contains instructions and examples of how to run
