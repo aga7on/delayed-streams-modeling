@@ -1531,132 +1531,15 @@ def create_interface():
                 outputs=[voice_status, voice_progress, voice_logs, voice_quality_metrics]
             )
             
-            def analyze_official_voices_interface():
-                """Интерфейс для анализа официальных голосов"""
-                try:
-                    official_data = analyze_official_voice_structure()
-                    if official_data:
-                        analysis = "✅ Анализ официального голоса завершен!\n\n"
-                        analysis += f"🔑 Найденные ключи: {list(official_data.keys())}\n\n"
-                        
-                        for key, tensor in official_data.items():
-                            analysis += f"📊 {key}:\n"
-                            analysis += f"  📐 Shape: {tensor.shape}\n"
-                            analysis += f"  🏷️ Dtype: {tensor.dtype}\n"
-                            analysis += f"  📊 Elements: {tensor.numel()}\n"
-                            analysis += f"  💾 Size: {tensor.numel() * tensor.element_size()} bytes\n\n"
-                        
-                        analysis += "💡 Рекомендации для исправления тренировки:\n"
-                        analysis += "1. Официальные голоса содержат сложную структуру\n"
-                        analysis += "2. Нужно использовать тот же формат для совместимости\n"
-                        analysis += "3. Размер файла должен быть ~250KB, не 1KB\n"
-                        
-                        return analysis
-                    else:
-                        return "❌ Не удалось найти официальные голоса для анализа"
-                        
-                except Exception as e:
-                    return f"❌ Ошибка анализа: {str(e)}"
-            
-            analyze_voices_btn.click(
-                analyze_official_voices_interface,
-                outputs=voice_logs
-            )
-            
             # ----------------------------------------
             gr.Markdown("---")
             
             # INFO Spoiler with RAW data
             with gr.Accordion("ℹ️ INFO - Training & Languages RAW Data", open=False):
                 def get_raw_training_info():
-                    return """🎯 TRAINING SUPPORT: ✅ YES
-
-📁 Evidence found:
-  ✅ stt_evaluate_on_dataset.py - Complete evaluation pipeline
-  ✅ Multi-language configs (English, French)
-  ✅ TTS-voices repository with voice management
-  ✅ Configurable model architectures
-  ✅ Prompting support for fine-tuning
-
-🌍 CURRENT LANGUAGES:
-  • English: stt-2.6b-en (STT) + TTS
-  • French: stt-1b-en_fr (STT) + TTS
-  • Multilingual: en_fr tokenizer
-
-🎤 VOICE CLONING: ✅ SUPPORTED
-  • Voice embeddings in .safetensors format
-  • Multiple emotional styles (happy, sad, angry, neutral)
-  • Custom voice training pipeline exists
-  • TTS-voices repository: kyutai/tts-voices
-
-🏗️ ARCHITECTURE SUPPORTS:
-  • Configurable vocabulary sizes
-  • Multiple tokenizers
-  • Transformer-based models
-  • Audio + Text tokenization
-
-📚 See training_analysis.md and add_new_language_guide.md
-
-✅ CONFIRMED: New languages CAN be added!
-
-📋 Requirements:
-- 🎵 100+ hours of audio data
-- 📝 Corresponding transcriptions
-- 📚 Large text corpus for tokenizer
-- 🎤 Multiple speakers for TTS voices
-- 💻 High-end GPU for training
-
-🛠️ Implementation Options:
-- Fine-tune existing model (Recommended)
-- Train from scratch (Advanced)
-- Extend multilingual model (Best for similar languages)
-
-🌍 ADDING NEW LANGUAGE SUPPORT - IMPLEMENTATION GUIDE:
-
-📊 PHASE 1: DATA PREPARATION
-• Collect 100+ hours of target language audio + transcripts
-• Gather large target language text corpus (Wikipedia, news, books)
-• Record multiple native speakers for TTS (5+ speakers recommended)
-• Ensure diverse accents, ages, emotions
-
-🔧 PHASE 2: TOKENIZER TRAINING
-• Train SentencePiece model for target language
-• Create config-stt-[lang]-hf.toml
-• Update vocabulary parameters
-
-🎓 PHASE 3: MODEL TRAINING
-• Start with kyutai/stt-1b-en_fr base model
-• Fine-tune on target language dataset
-• Requires 1-2 weeks on A100/H100 GPU
-• Expected accuracy: 85-95% for well-resourced languages
-
-🎤 PHASE 4: VOICE CLONING
-• Extract voice embeddings from target language speakers
-• Save as .safetensors files
-• Update TTS configuration
-• Test voice quality and similarity
-
-✅ PHASE 5: INTEGRATION
-• Update WebUI model lists
-• Add target language to available languages
-• Test STT and TTS functionality
-• Performance evaluation
-
-🎯 EXPECTED RESULTS:
-• STT Accuracy: 90%+ (with good data)
-• TTS Quality: Natural target language speech
-• Voice Cloning: Multiple emotional styles
-• Real-time Performance: Maintained
-
-📚 RESOURCES:
-• Main training repo: kyutai-labs/moshi
-• Voice examples: kyutai/tts-voices
-• Documentation: training_analysis.md
-
-🚀 READY TO START? Begin with data collection!"""
-                
+                    return 
                 raw_info_display = gr.Textbox(
-                    label="RAW Training & Languages Information",
+                    label="TBD",
                     value=get_raw_training_info(),
                     lines=25,
                     interactive=False,
